@@ -4,13 +4,13 @@ import { testData } from '../data/testData'
 import ProductCard from './ProductCard'
 
 type Props = {
-  setCart: Dispatch<SetStateAction<Product[]>>
+  setCartProps: Dispatch<SetStateAction<Product[]>>
 }
-export default function ProductCardDeck({ setCart }: Props) {
+export default function ProductCardDeck({ setCartProps }: Props) {
   return (
     <div className="card-deck my-0 mx-auto p-3">
       {testData.map(product =>
-        <ProductCard key={product.id} product={product} setCart={setCart} />
+        <ProductCard key={product.id} product={product} setCartProps={setCartProps} />
       )}
     </div>
   )

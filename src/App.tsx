@@ -12,7 +12,7 @@ function App() {
       <CartContext.Provider value={cart}>
         <NavigationBar cartProps={cart} />
       </CartContext.Provider>
-      <ProductCardDeck setCart={setCart} />
+      <ProductCardDeck setCartProps={setCart} />
     </>
   )
 }
