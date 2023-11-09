@@ -21,9 +21,9 @@ export default function NavigationBar({ cartProps }: Props) {
         <div className="justify-content-end">
           <div className="hstack gap-3">
             <i className="bi bi-cart fs-3"></i>
-            {cartContext.length > 0 &&
+            {cartRecoil.length > 0 &&
               <span className='d-inline-block px-3 bg-success rounded-pill floating'>
-                ${cartContext.reduce((sum, a) => sum + a.price, 0).toFixed(2)}
+                ${cartRecoil.reduce((sum, a) => sum + a.price, 0).toFixed(2)}
               </span>
             }
             <CartIndicator title="Props" count={cartProps.length} />
