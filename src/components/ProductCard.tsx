@@ -1,15 +1,15 @@
 import { Dispatch, SetStateAction } from 'react'
 import { useRecoilState } from 'recoil'
-import { cartAtom } from '../atoms/cartAtom'
-import { useAppDispatch } from '../redux/hooks'
-import { addProductToCart } from '../redux/cartSlice'
 import Product from '../data/Product'
+import { cartAtom } from '../stateManagement/recoil/cartAtom'
+import { useAppDispatch } from '../stateManagement/redux/hooks'
+import { addProductToCart } from '../stateManagement/redux/cartSlice'
 
 type Props = {
   product: Product, setCartProps: Dispatch<SetStateAction<Product[]>>
 }
 export default function ProductCard({ product, setCartProps }: Props) {
-  const [_, setCartRecoil] = useRecoilState(cartAtom)
+  const [cartRecoil, setCartRecoil] = useRecoilState(cartAtom)
   const dispatch = useAppDispatch()
   const addToCart = () => {
     setCartProps(prev => [...prev, product])
@@ -24,7 +24,9 @@ export default function ProductCard({ product, setCartProps }: Props) {
         <div className="card-body">
           <div className="card-title h5 text-break">{product.name}</div>
           <p className="card-text">${product.price.toFixed(2)}</p>
-          <button className="btn btn-primary" onClick={addToCart}>Add to Cart</button>
+          <button className="btn btn-primary" disabled={cartRecoil.includes(product)} onClick={addToCart}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
