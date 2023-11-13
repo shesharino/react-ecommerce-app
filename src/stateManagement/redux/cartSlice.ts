@@ -7,11 +7,17 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addProductToCart: (state, action: PayloadAction<Product>) => {
+    addProduct: (state, action: PayloadAction<Product>) => {
       state.push(action.payload)
+    },
+    removeProduct: (state, action: PayloadAction<Product>) => {
+      state.splice(state.indexOf(action.payload), 1)
+    },
+    removeAll: (state) => {
+      state.splice(0)
     }
   }
 })
 
-export const { addProductToCart } = cartSlice.actions
+export const { addProduct, removeProduct, removeAll } = cartSlice.actions
 export default cartSlice.reducer

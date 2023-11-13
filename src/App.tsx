@@ -21,7 +21,7 @@ export default function App() {
           </CartContext.Provider>
           <Routes>
             <Route path='/' element={<ProductList setCartProps={setCart} />} />
-            <Route path='/cart' element={<ShoppingCart />} />
+            <Route path='/cart' element={<ShoppingCart setCartProps={setCart} />} />
           </Routes>
         </BrowserRouter>
       </Provider>
