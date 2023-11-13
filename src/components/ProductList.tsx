@@ -11,7 +11,7 @@ export default function ProductList({ setCartProps }: Props) {
     <div className='container'>
       <div className='row gy-3 mt-0'>
         {testData.map(product =>
-          <div key={product.id} className='col-4'>
+          <div key={product.id} className='col-md-6 col-lg-4'>
             <ProductItem product={product} setCartProps={setCartProps} />
           </div>
         )}

@@ -1,21 +1,24 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { RecoilRoot } from 'recoil'
+import { useRecoilValue } from 'recoil'
 import { Provider } from 'react-redux'
+import { IntlProvider } from 'react-intl'
 import NavigationBar from './components/NavigationBar'
-import ProductList from './components/ProductList.tsx'
-import ShoppingCart from './components/ShoppingCart.tsx'
+import ProductList from './components/ProductList'
+import ShoppingCart from './components/ShoppingCart'
 import Product from './data/Product'
 import { CartContext } from './stateManagement/context/CartContext'
-import { store } from './stateManagement/redux/store.ts'
+import { languageAtom } from './stateManagement/recoil/languageAtom'
+import { store } from './stateManagement/redux/store'
 
 export default function App() {
   const [cart, setCart] = useState<Product[]>([])
+  const language = useRecoilValue(languageAtom)
 
   return (
-    <RecoilRoot>
-      <Provider store={store}>
-        <BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <IntlProvider {...language}>
           <CartContext.Provider value={cart}>
             <NavigationBar cartProps={cart} />
           </CartContext.Provider>
@@ -23,8 +26,8 @@ export default function App() {
             <Route path='/' element={<ProductList setCartProps={setCart} />} />
             <Route path='/cart' element={<ShoppingCart setCartProps={setCart} />} />
           </Routes>
-        </BrowserRouter>
-      </Provider>
-    </RecoilRoot>
+        </IntlProvider>
+      </BrowserRouter>
+    </Provider>
   )
 }

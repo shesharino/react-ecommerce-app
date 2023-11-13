@@ -1,0 +1,18 @@
+{
+  "cart.Add": "Agregar al carrito",
+  "cart.Clear": "Limpiar carrito",
+  "cart.Empty": "¡No hay artículos en el carrito!",
+  "cart.Remove": "Quitar del carrito",
+  "cart.Return": "Volver a la tienda",
+  "languages.English": "Inglés",
+  "languages.Spanish": "Español",
+  "products.Blazer": "Blazer",
+  "products.Handbag": "Bolso de mano",
+  "products.Jacket": "Campera",
+  "products.Pants": "Pantalones",
+  "products.Shirt": "Remera",
+  "products.Shorts": "Shorts",
+  "products.Skirt": "Pollera",
+  "products.Sunglasses": "Lentes de sol",
+  "products.Wristwatch": "Reloj de pulsera"
+}

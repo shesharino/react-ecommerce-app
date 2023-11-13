@@ -1,0 +1,18 @@
+{
+  "cart.Add": "Add to cart",
+  "cart.Clear": "Clear cart",
+  "cart.Empty": "There are no items in the cart!",
+  "cart.Remove": "Remove from cart",
+  "cart.Return": "Return to the store",
+  "languages.English": "English",
+  "languages.Spanish": "Spanish",
+  "products.Blazer": "Blazer",
+  "products.Handbag": "Handbag",
+  "products.Jacket": "Jacket",
+  "products.Pants": "Pants",
+  "products.Shirt": "Shirt",
+  "products.Shorts": "Shorts",
+  "products.Skirt": "Skirt",
+  "products.Sunglasses": "Sunglasses",
+  "products.Wristwatch": "Wristwatch"
+}
